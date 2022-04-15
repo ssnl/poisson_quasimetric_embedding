@@ -87,11 +87,11 @@ vectors of size ``4 * num_quasipartition_mixtures``, and is a PQE-LH variant.
     ...                      discounted=True)
     >>> u = torch.randn(5, 16 * 4)
     >>> v = torch.randn(5, 16 * 4)
-    >>> print(discounted_pqe(u, v))
+    >>> print(discounted_pqe(u, v))  # non-negativity (i.e., discounted distance <= 1)
     tensor([0.6986, 0.6614, 0.7698, 0.6864, 0.6138], grad_fn=<ProdBackward1>)
     >>> print(discounted_pqe(v, u))  # asymmetrical
     tensor([0.7258, 0.7232, 0.7233, 0.7440, 0.7511], grad_fn=<ProdBackward1>)
-    >>> print(discounted_pqe(u, u))  # identity
+    >>> print(discounted_pqe(u, u))  # identity (i.e., discounted distance = 1)
     tensor([1., 1., 1., 1., 1.], grad_fn=<ProdBackward1>)
     >>> t = torch.randn(5, 16 * 4)
     >>> print(discounted_pqe(u, v) * discounted_pqe(v, t) <= discounted_pqe(u, t))  # triangle inequality
