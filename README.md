@@ -69,12 +69,15 @@ vectors of size ``4 * num_quasipartition_mixtures``, and is a PQE-LH variant.
     >>> print(pqe)
     >>> u = torch.randn(5, 16 * 4)
     >>> v = torch.randn(5, 16 * 4)
-    >>> print(pqe(u, v))
+    >>> print(pqe(u, v))  # non-negativity
     tensor([0.2902, 0.3297, 0.2735, 0.3561, 0.2403], grad_fn=<SqueezeBackward1>)
     >>> print(pqe(v, u))  # asymmetrical
     tensor([0.2554, 0.2326, 0.3263, 0.2562, 0.2975], grad_fn=<SqueezeBackward1>)
-    >>> print(pqe(u, u))
+    >>> print(pqe(u, u))  # identity
     tensor([0., 0., 0., 0., 0.], grad_fn=<SqueezeBackward1>)
+    >>> t = torch.randn(5, 16 * 4)
+    >>> print(pqe(u, v) + pqe(v, t) >= pqe(u, t))  # triangle inequality
+    tensor([True, True, True, True, True])
     ```
 
 2. **Discounted** quasimetric distances between two 64-dimensional latent vectors (with batch size 5)
@@ -86,10 +89,13 @@ vectors of size ``4 * num_quasipartition_mixtures``, and is a PQE-LH variant.
     >>> v = torch.randn(5, 16 * 4)
     >>> print(discounted_pqe(u, v))
     tensor([0.6986, 0.6614, 0.7698, 0.6864, 0.6138], grad_fn=<ProdBackward1>)
-    >>> print(discounted_pqe(v, u))
+    >>> print(discounted_pqe(v, u))  # asymmetrical
     tensor([0.7258, 0.7232, 0.7233, 0.7440, 0.7511], grad_fn=<ProdBackward1>)
-    >>> print(discounted_pqe(u, u))  # asymmetrical
+    >>> print(discounted_pqe(u, u))  # identity
     tensor([1., 1., 1., 1., 1.], grad_fn=<ProdBackward1>)
+    >>> t = torch.randn(5, 16 * 4)
+    >>> print(discounted_pqe(u, v) * discounted_pqe(v, t) <= discounted_pqe(u, t))  # triangle inequality
+    tensor([True, True, True, True, True])
     ```
 
 3. Components of a PQE
