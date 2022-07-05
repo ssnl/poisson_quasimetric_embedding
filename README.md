@@ -4,7 +4,7 @@ This repository provides a PyTorch implementation of the Poisson Quasimetric Emb
 
 PQEs are proposed in **On the Learning and Learnability of Quasimetrics (ICLR 2022)**. It is the first method with known guarantee to well approximate any quasimetric, while other common choices (e.g., unconstrained deep networks) provably fail. Empirically, PQEs show good results on learning quasimetrics of various sizes and structures, including an large-scale social graph and an offline Q-learning task.
 
-+ [arXiv (Coming Soon)](./)
++ [arXiv](https://arxiv.org/abs/2206.15478)
 + [ICLR 2022 (OpenReview)](https://openreview.net/forum?id=y0VvIg25yk)
 + [Project Page](https://ssnl.github.io/quasimetric)
 
