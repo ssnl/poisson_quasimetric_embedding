@@ -63,7 +63,7 @@ void prob_two_poisson_grad_mu1_kernel_cuda(at::TensorIterator& iter) {
             scalar_t g_gt;
 
             if (!use_besselIe) {
-                g_gt = std::exp(-mu1 - mu2) * at::native::calc_i0<scalar_t>(std::sqrt(mu1 * mu2) * 2) * gout;
+                g_gt = std::exp(-mu1 - mu2) * cephes::cuda::i0<scalar_t>(std::sqrt(mu1 * mu2) * 2) * gout;
             } else {
                 scalar_t twice_sqrtmu12 = std::sqrt(mu1 * mu2) * 2;
                 g_gt = std::exp(twice_sqrtmu12 - mu1 - mu2) * cephes::cuda::i0e<scalar_t>(twice_sqrtmu12) * gout;
