@@ -3,7 +3,7 @@
 **[Tongzhou Wang](https://ssnl.github.io), [Phillip Isola](http://web.mit.edu/phillipi/)**
 
 ---
-:fire::fire: **Checkout [`torchqmet`](https://github.com/quasimetric-learning/torch-quasimetric): our new PyTorch package of many SOTA quasimetric learning methods, including [Interval Quasimetric Embeddings](https://tongzhouwang.info/interval_quasimetric_embedding), a new quasimetric learning method that improves performances with a much simpler form**!
+:fire::fire: **Checkout [`torchqmet`](https://github.com/quasimetric-learning/torch-quasimetric): our new PyTorch package of many SOTA quasimetric learning methods, including [Interval Quasimetric Embeddings (IQEs)](https://tongzhouwang.info/interval_quasimetric_embedding), a new quasimetric learning method that improves performances with a much simpler form**!
 
 ---
 This repository provides a PyTorch implementation of the Poisson Quasimetric Embedding (PQE) module for learning quasimetrics (i.e., asymmetrical distances).
