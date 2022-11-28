@@ -2,6 +2,10 @@
 
 **[Tongzhou Wang](https://ssnl.github.io), [Phillip Isola](http://web.mit.edu/phillipi/)**
 
+---
+:fire::fire: **Checkout [`torchqmet`](https://github.com/quasimetric-learning/torch-quasimetric): our new PyTorch package of many SOTA quasimetric learning methods, including [Interval Quasimetric Embeddings](https://tongzhouwang.info/interval_quasimetric_embedding), a new quasimetric learning method that improves performances with a much simpler form**!
+
+---
 This repository provides a PyTorch implementation of the Poisson Quasimetric Embedding (PQE) module for learning quasimetrics (i.e., asymmetrical distances).
 
 PQEs are proposed in **On the Learning and Learnability of Quasimetrics (ICLR 2022)**. It is the first method that has known guarantee to well approximate any quasimetric, and can be trained in gradient-based optimization (e.g., deep learning). Other common choices (e.g., unconstrained deep networks) provably fail. Empirically, PQEs show good results on learning quasimetrics of various sizes and structures, including an large-scale social graph and an offline Q-learning task.
